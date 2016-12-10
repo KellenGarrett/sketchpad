@@ -2,9 +2,18 @@ $(document).ready(function(){
   createGrid(4);
 });
 
+function randomColor() {
+  var hex = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random()*16)]
+  };
+  return color;
+};
+
 function colorGrid(){
   $(".grid").hover(function(){
-    $(this).css('background-color', 'green');
+    $(this).css('background-color', randomColor);
   })
 };
 

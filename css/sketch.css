@@ -23,9 +23,6 @@ button {
   background-color: #888;
   outline: 1px solid black;
   display: inline-block;
-  margin: -2px 0;
-}
-
-.highlighted {
-  background-color: green;
+  margin: 0;
+  float: left;
 }
