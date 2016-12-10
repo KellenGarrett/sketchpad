@@ -1,5 +1,8 @@
 $(document).ready(function(){
   createGrid();
+  $(".grid").hover(function(){
+    $(this).addClass("highlighted");
+  })
 });
 
 function createGrid(){
