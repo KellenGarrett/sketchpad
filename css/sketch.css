@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  height: 800px;
+  width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.grid {
+  height: 200px;
+  width: 200px;
+  background-color: blue;
+  outline: 1px solid black;
+  display: inline-block;
+  margin: -2px 0;
+}
