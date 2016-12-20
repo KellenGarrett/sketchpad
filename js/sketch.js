@@ -2,6 +2,8 @@ $(document).ready(function(){
   createGrid(4);
 });
 
+var paintColor = "black";
+
 function randomColor() {
   var hex = "0123456789ABCDEF";
   var color = "#";
@@ -11,13 +13,15 @@ function randomColor() {
   return color;
 };
 
-function colorGrid(){
-  $(".grid").hover(function(){
-    $(this).css('background-color', randomColor);
-  })
+function userColor() {
+  paintColor = prompt("Choose a color");
+  if (paintColor == "") {
+    paintColor = "black"
+  };
 };
 
 function createGrid(sketchSize){
+  $(".grid").remove(".grid");
   var sketchDiv;
   var gridSize = 800/sketchSize;
   var $sketchPad = $(".sketchPad")
@@ -28,8 +32,13 @@ function createGrid(sketchSize){
   colorGrid();
 };
 
+function colorGrid(){
+  $(".grid").mouseenter(function(){
+    $(this).css("background-color", paintColor);
+  });
+};
+
 function reset() {
-  $(".grid").remove(".grid");
   var userSize = prompt("Pick a grid width between 1 and 64");
   if (userSize >= 1 && userSize <= 64) {
     createGrid(userSize);
